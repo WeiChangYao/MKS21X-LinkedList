@@ -1,7 +1,7 @@
 class MyLinkedList{
   private int size;
   private Node start,end;
-
+  private int length;
  
 
   public int size(){
