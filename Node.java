@@ -22,8 +22,9 @@ class Node{
     return data;
   }
   public Integer setData(Integer i){
-    return data;
     data = i;
+    return data;            //DOES THIS RETURN OLD DATA!?!?!?!?
+                            //BUMP^^^^
   }
   public String toString(){
     String str = "";
