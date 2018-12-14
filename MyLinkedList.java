@@ -26,6 +26,16 @@ class MyLinkedList{
     return str;
   }
   
+  private Node getNthNode(int index){
+    int i = index;
+    Node current = start;
+    while (i > 0){
+      current.next();
+      i--;
+    }
+    return current;
+  }
+
   private Integer get(int index){
     int i = index;
     Node current = start;
