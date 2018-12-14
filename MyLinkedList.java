@@ -36,8 +36,14 @@ class MyLinkedList{
     return current;
   }
 
-  private Integer get(int index){
+  public Integer get(int index){
     return getNthNode(index).getData();
   }
   
+  public Integer set(int index, Integer value){
+    Integer a = getNthNode(index).getData();
+    getNthNode(index).setData(value);
+    return a;
+  }
+    
 }
