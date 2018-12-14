@@ -16,8 +16,15 @@ class MyLinkedList{
     return true;                 
   }
  
-  /*public String toString(){
-    
-  }*/
+  public String toString(){
+    String str = "";
+    Node current = start;
+    while (current != null){
+      str += current.getData();
+      current = current.next();
+    }
+    return str;
+  }
+  a
   
 }
