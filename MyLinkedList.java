@@ -10,9 +10,14 @@ class MyLinkedList{
  
   public boolean add(int value){
     size++;                       //size goes up
-    end = new Node (value, ;                  //
+    Node newEnd = new Node (value, end, null);
+    end.setNext(newEnd);
+    end = newEnd; 
+    return true;                 
   }
  
-  public String toString();
+  /*public String toString(){
+    
+  }*/
   
 }
