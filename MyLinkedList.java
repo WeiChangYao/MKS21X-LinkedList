@@ -37,13 +37,7 @@ class MyLinkedList{
   }
 
   private Integer get(int index){
-    int i = index;
-    Node current = start;
-    while (i > 0){
-      current.next();
-      i--;
-    }
-    return current.getData();
+    return getNthNode(index).getData();
   }
   
 }
