@@ -81,6 +81,25 @@ class MyLinkedList{
     getNthNode(index).setNext(newNode);
   }
 
-
+  public Integer remove(int index){
+    Integer removeReturn = getNthNode(index).getData();
+    getNthNode(index-1).setNext(getNthNode(index+1));
+    getNthNode(index+1).setPrev(getNthNode(index-1));
+    return removeReturn;
+  }
+  
+  public boolean remove(Integer value){
+    int i = 0;
+    Node current = start;
+    while (current != null){
+      if(value == current.getData()){
+        remove(i);
+        return true;
+      }
+      i++;
+      current = current.next();
+    }
+    return false;
+  }
     
 }
