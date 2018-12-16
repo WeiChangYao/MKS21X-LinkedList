@@ -1,6 +1,6 @@
 class MyLinkedList{
   private int size;
-  private Node start,end;
+  public Node start,end;
   private int length;
  
   MyLinkedList(){
@@ -48,11 +48,15 @@ class MyLinkedList{
   }
   
   public Node getNthNode(int index){  //PRIVATE THIS!!!!!
-    int i = index;
+    int i = 0;
     Node current = start;
-    while (i > 0){
-      current.next();
-      i--;
+    while (current != null){
+      if (i == index){
+        return current;
+      }
+      current = current.next();
+      i++;
+      
     }
     return current;
   }
