@@ -21,16 +21,25 @@ class MyLinkedList{
       start = newStart;
       return true;
     }
-    else{
+    
+    if (size == 1){
     
     size++;                       
+    Node newEnd = new Node(value, null, start);
+    start.setNext(newEnd);
+    end = newEnd;
+    return true;  
+    }
+    else{
+      size++;                       
     Node newEnd = new Node(value, null, getNthNode(size()-2));
     getNthNode(size()-2).setNext(newEnd);
     end = newEnd;
-    return true;                 
+    return true;    
+    }
   }
     
-  }
+  
  
   public String toString(){
     String str = "[";
@@ -43,7 +52,7 @@ class MyLinkedList{
     return str;
   }
   
-  public Node getNthNode(int index){
+  public Node getNthNode(int index){  //PRIVATE THIS!!!!!
     int i = index;
     Node current = start;
     while (i > 0){
