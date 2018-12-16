@@ -5,8 +5,7 @@ class MyLinkedList{
  
   MyLinkedList(){
     size = 0;
-    //start = new Node(0, end, null);
-    //end = new Node(0, null, start);
+    start = new Node(null,null,null);
   }
   
   public int size(){
@@ -14,29 +13,15 @@ class MyLinkedList{
   }
  
   public boolean add(int value){  //IF IT'S BLANK MAKE IT SET START TO THE VALUE?!?!?!?!?!?
-    
-    if(size() == 0){
-      size++;
-      Node newStart = new Node(value, null, null);
-      start = newStart;
-      return true;
+    Node current = start;
+    Node newNode = new Node(value, null, null);
+    while (current.next() != null){
+      current = current.next();
     }
-    
-    if (size == 1){
-    
-    size++;                       
-    Node newEnd = new Node(value, null, start);
-    start.setNext(newEnd);
-    end = newEnd;
-    return true;  
-    }
-    else{
-      size++;                       
-    Node newEnd = new Node(value, null, getNthNode(size()-2));
-    getNthNode(size()-2).setNext(newEnd);
-    end = newEnd;
-    return true;    
-    }
+    current.setNext(newNode);
+    newNode.setPrev(current);
+    size++;
+    return true;
   }
     
   
@@ -45,8 +30,14 @@ class MyLinkedList{
     String str = "[";
     Node current = start;
     while (current != null){
+      if(current.getData() != null){
       str += current.getData();
+      if(current.next() != null){
+        str+= ", ";
+      }
+      }
       current = current.next();
+      
     }
     str += "]";
     return str;

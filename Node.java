@@ -1,7 +1,7 @@
 class Node{
-  private int data;
+  private Integer data;
   private Node next,prev;
-  public Node(int num, Node nextNum, Node prevNum){
+  public Node(Integer num, Node nextNum, Node prevNum){
     data = num;
     next = nextNum;
     prev = prevNum;
