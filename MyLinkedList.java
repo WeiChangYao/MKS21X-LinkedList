@@ -3,12 +3,17 @@ class MyLinkedList{
   private Node start,end;
   private int length;
  
-
+  MyLinkedList(){
+    size = 0;
+    start = new Node(0, end, null);
+    end = new Node(0, null, start);
+  }
+  
   public int size(){
     return size;
   }
  
-  public boolean add(int value){
+  public boolean add(int value){  //IF IT'S BLANK MAKE IT SET START TO THE VALUE?!?!?!?!?!?
     size++;                       //size goes up
     Node newEnd = new Node (value, end, null);
     end.setNext(newEnd);
@@ -45,5 +50,37 @@ class MyLinkedList{
     getNthNode(index).setData(value);
     return a;
   }
+  
+  public boolean contains(Integer value){
+    Node current = start;
+    while (current != null){
+      if(value == current.getData()){
+        return true;
+      }
+      current = current.next();
+    }
+    return false;
+  }
+  
+  public int indexOf(Integer value){
+    int count = 0;
+    Node current = start;
+    while (current != null){
+      if(value == current.getData()){
+        return count;
+      }
+      count++;
+      current = current.next();
+    }
+    return -1;
+  }
+  
+  public void add(int index,Integer value){
+    Node newNode = new Node(value, getNthNode(index), getNthNode(index).next());
+    getNthNode(index).next().setPrev(newNode);
+    getNthNode(index).setNext(newNode);
+  }
+
+
     
 }
