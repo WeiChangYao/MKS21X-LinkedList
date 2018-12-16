@@ -12,7 +12,7 @@ class MyLinkedList{
     return size;
   }
  
-  public boolean add(int value){  //IF IT'S BLANK MAKE IT SET START TO THE VALUE?!?!?!?!?!?
+  public boolean add(Integer value){  //IF IT'S BLANK MAKE IT SET START TO THE VALUE?!?!?!?!?!?
     Node current = start;
     Node newNode = new Node(value, null, null);
     while (current.next() != null){
@@ -106,10 +106,17 @@ class MyLinkedList{
     Integer removeReturn = getNthNode(index).getData();
     getNthNode(index-1).setNext(getNthNode(index+1));
     getNthNode(index+1).setPrev(getNthNode(index-1));
+    size--;
     return removeReturn;
   }
   
   public boolean remove(Integer value){
+   if (contains(value) == true){
+      remove(indexOf(value));
+      return true;
+    }
+    else{return false;} 
+    /*
     int i = 0;
     Node current = start;
     while (current != null){
@@ -120,7 +127,7 @@ class MyLinkedList{
       i++;
       current = current.next();
     }
-    return false;
-  }
+    return false; */
+  } 
     
 }
