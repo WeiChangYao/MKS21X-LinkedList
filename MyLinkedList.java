@@ -21,6 +21,10 @@ class MyLinkedList{
     current.setNext(newNode);
     newNode.setPrev(current);
     size++;
+    if(start.getData() == null){
+      start = current;
+      start.setPrev(null);
+    }
     return true;
   }
     

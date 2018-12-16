@@ -21,6 +21,13 @@ public class Driver3 {
         }
         System.out.println(list);
         System.out.println("This should print: \"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\"");
+      System.out.println(list.getNthNode(1).getData());
+            System.out.println(list.getNthNode(2).getData());
+
+            System.out.println(list.getNthNode(3).getData());
+
+            System.out.println(list.getNthNode(0).getData());
+
         
         //Step Three: Adding a value to the middle
         System.out.println("#####################################");
