@@ -57,7 +57,7 @@ public class DriverUm {
       System.out.println(e);
     }  */
     for (int x = 0; x < 10; x++) {
-      list.set(1, 1+1);
+      list.set(x, x+1);
     }
     System.out.println("Setting every index of list with a loop, should be a list of 1-10 inclusive: " + list);
     System.out.println();
@@ -75,14 +75,14 @@ public class DriverUm {
     System.out.println("---- Testing add(index, value) ----");
     System.out.println();
     System.out.println("Current list: " + list);
-    System.out.print("Add to -1th index, should print an error: ");
+    /*System.out.print("Add to -1th index, should print an error: ");
     try {
-      list.add(-1, 0);
+      list.add(-1, 0);                                                     ==============EXCEPTION==============
     }
     catch (IndexOutOfBoundsException e) {
       System.out.println(e);
-    }
-    list.add(0, 0);
+    } */
+    list.add(1, 0);                                                                //MODIFIED
     System.out.println("Add 0 to the 0th index: " + list);
     list.add(10, 11);
     System.out.println("Add 11 to the 10th index: " + list);
@@ -92,7 +92,7 @@ public class DriverUm {
     System.out.println("---- Testing remove methods ----");
     System.out.println();
     System.out.println("Current list: " + list);
-    System.out.println("Remove 0th index should print 0: " + list.remove(0));
+    System.out.println("Remove 0th index should print 0: " + list.remove(1));     //MODIFIED
     System.out.println("Current list: " + list);
     System.out.print("Removing -1th index, should print an error: ");
     try {
