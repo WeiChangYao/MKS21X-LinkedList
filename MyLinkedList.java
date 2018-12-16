@@ -74,7 +74,7 @@ class MyLinkedList{
   public boolean contains(Integer value){
     Node current = start;
     while (current != null){
-      if(value == current.getData()){
+      if(value.equals(current.getData())){
         return true;
       }
       current = current.next();
@@ -86,7 +86,7 @@ class MyLinkedList{
     int count = 0;
     Node current = start;
     while (current != null){
-      if(value == current.getData()){
+      if(value.equals(current.getData())){
         return count;
       }
       count++;
@@ -103,9 +103,12 @@ class MyLinkedList{
   }
 
   public Integer remove(int index){
+    if (index < 1 || index > size()){
+	    return null;
+    }
     Integer removeReturn = getNthNode(index).getData();
-    getNthNode(index-1).setNext(getNthNode(index+1));
     getNthNode(index+1).setPrev(getNthNode(index-1));
+    getNthNode(index-1).setNext(getNthNode(index+1));
     size--;
     return removeReturn;
   }
@@ -120,7 +123,7 @@ class MyLinkedList{
     int i = 0;
     Node current = start;
     while (current != null){
-      if(value == current.getData()){
+      if(value.equals(current.getData())){
         remove(i);
         return true;
       }

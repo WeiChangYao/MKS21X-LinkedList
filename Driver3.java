@@ -41,7 +41,9 @@ public class Driver3 {
         System.out.println("##########################");
         System.out.println("##Removing a Value Test:##");
         System.out.println("##########################");
-        list.remove(5);
+              System.out.println(list);
+
+        list.remove(9);
         System.out.println(list);
         System.out.println("This should print: \"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\"");
         
@@ -49,11 +51,11 @@ public class Driver3 {
         System.out.println("#####################################");
         System.out.println("##Remove a Value by its Value Test:##");
         System.out.println("#####################################");
-      System.out.println(list.contains(new Integer(9)));
+      System.out.println(list.contains(new Integer(999)));
         System.out.println("This should print: true");
-              System.out.println(list.indexOf(9));
+              System.out.println(list.indexOf(999));
         System.out.println("This should print: 9");
-        list.remove(new Integer(9));
+        list.remove(new Integer(999));                       //I MADE IT 8 INSTEAD OF 9
         System.out.println(list);
         System.out.println("This should print: \"[0, 1, 2, 3, 4, 5, 6, 7, 8]\"");
         
