@@ -96,9 +96,10 @@ class MyLinkedList{
   }
   
   public void add(int index,Integer value){
-    Node newNode = new Node(value, getNthNode(index), getNthNode(index).next());
-    getNthNode(index).next().setPrev(newNode);
-    getNthNode(index).setNext(newNode);
+    size++;
+    Node newNode = new Node(value, null, null);
+    newNode.setNext(getNthNode(index));
+	  getNthNode(index-1).setNext(newNode); 
   }
 
   public Integer remove(int index){

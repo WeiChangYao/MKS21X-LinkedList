@@ -26,7 +26,7 @@ public class Driver3 {
 
             System.out.println(list.getNthNode(3).getData());
 
-            System.out.println(list.getNthNode(0).getData());
+            System.out.println(list.getNthNode(5).getData());
 
         
         //Step Three: Adding a value to the middle
