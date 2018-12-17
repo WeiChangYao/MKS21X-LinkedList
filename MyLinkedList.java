@@ -25,6 +25,7 @@ class MyLinkedList{
       start = current;             //start node turns into the new node
       start.setPrev(null);         //new node has no previous node
     }
+    end = newNode;                 //MAKES THE NEW NODE END
     return true;
   }
     
