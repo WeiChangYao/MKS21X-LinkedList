@@ -4,8 +4,8 @@ class MyLinkedList{
   private int length;
  
   MyLinkedList(){
-    size = 0;
-    start = new Node(null,null,null);
+    size = 0;                       //makes list with size 0        
+    start = new Node(null,null,null);//starting node with nothing
   }
   
   public int size(){
