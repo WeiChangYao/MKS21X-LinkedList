@@ -98,13 +98,26 @@ class MyLinkedList{
   public void add(int index,Integer value){
     if (index == 0){
       addFirst(value);
-    } else{
+    } 
+  //  if (index == size){
+  //    addLast(value);
+  //  }
+    else{
     size++;
     Node newNode = new Node(value, null, null);
     newNode.setNext(getNthNode(index));
 	  getNthNode(index-1).setNext(newNode); 
     }
   }
+  
+ /* public void addLast(Integer value){
+    size++;
+    Node newNode = new Node(value, null, end);
+    if(end != null) {
+      end.setNext(newNode);
+    }
+    end = newNode;
+  } */
   
   public void addFirst(Integer value){
     size++;
@@ -116,34 +129,53 @@ class MyLinkedList{
   }
 
   public Integer remove(int index){
-    if (index < 1 || index > size()){
-	    return null;
+    if(index == size-1){
+        return removeLast();
+     }
+    if(index == 0){
+      return removeFirst();
     }
+    else{
     Integer removeReturn = getNthNode(index).getData();
     getNthNode(index+1).setPrev(getNthNode(index-1));
     getNthNode(index-1).setNext(getNthNode(index+1));
     size--;
     return removeReturn;
+    }
   }
   
   public boolean remove(Integer value){
    if (contains(value) == true){
-      remove(indexOf(value));
-      return true;
-    }
-    else{return false;} 
-    /*
-    int i = 0;
-    Node current = start;
-    while (current != null){
-      if(value.equals(current.getData())){
-        remove(i);
+      if(indexOf(value) == size-1){
+        removeLast();
         return true;
       }
-      i++;
-      current = current.next();
+     else{
+      remove(indexOf(value));
+      return true;
+     }
     }
-    return false; */
+    else{return false;} 
   } 
+  
+  public Integer removeLast(){
+    Node current = getNthNode(size-1);
+    //Integer val = current.getData();
+    current = getNthNode(size-2);
+    current.setNext(null);
+    end = current;
+    size--;
+    return 1;//val;
+  }
+  
+  public Integer removeFirst(){
+    Node current = start;
+    Integer val = start.getData();
+    current = start.next();
+    current.setPrev(null);
+    start = current;
+    size--;
+    return val;
+  }
     
 }

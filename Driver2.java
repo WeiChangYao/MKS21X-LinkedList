@@ -42,7 +42,7 @@ public class Driver2 {
         System.out.println("#####################################");
         System.out.println("##Remove a Value by its Value Test:##");
         System.out.println("#####################################");
-        list.remove(new Integer(1));                                                       //CHANGED FROM A 9 =================== 
+        list.remove(new Integer(9));                                                       //CHANGED FROM A 9 =================== 
         System.out.println(list);
         System.out.println("This should print: \"[0, 1, 2, 3, 4, 5, 6, 7, 8]\"");
         
@@ -141,7 +141,9 @@ public class Driver2 {
         System.out.println("##Edge-Case Testing:##");
         System.out.println("######################\n");
         
-        /*System.out.println("Removing Last Element:");
+        System.out.println("Removing Last Element:");
+              System.out.println(list);
+
         list.remove(8);
         System.out.println(list);
         System.out.println("This should print: [0, 1, 2, 3, 4, 5, 6, 7]\n");
@@ -149,11 +151,11 @@ public class Driver2 {
         System.out.println("Removing First Element:");
         list.remove(0);
         System.out.println(list);
-        System.out.println("This should print: [1, 2, 3, 4, 5, 6, 7]\n"); */
+        System.out.println("This should print: [1, 2, 3, 4, 5, 6, 7]\n"); 
         
         System.out.println("Adding to Last Element:");
       System.out.println(list);
-        list.add(7, new Integer(8));
+        list.add(7, new Integer(8));                                          //from a 9
         System.out.println(list);
         System.out.println("This should print: [1, 2, 3, 4, 5, 6, 7, 8]\n");
         
