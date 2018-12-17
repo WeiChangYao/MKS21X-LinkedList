@@ -106,7 +106,7 @@ class MyLinkedList{
     if (index == 0){
       addFirst(value);  //add to first if index is 0
     } else{                     //I HAD TO ADD AN ELSE THERE OTHERWISE addFirst WOULDN'T WORK
-    if (index == size-1){
+    if (index == size){
       addLast(value);   //ADD TO FIRST IF ADDING TO LAST INDEX (CAPS SO I CAN REFER TO THIS)
     }
 
