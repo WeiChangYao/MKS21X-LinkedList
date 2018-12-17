@@ -62,10 +62,14 @@ class MyLinkedList{
   }
 
   public Integer get(int index){
+    if(index < 0) throw new IndexOutOfBoundsException();
+    if(index > size-1) throw new IndexOutOfBoundsException();
     return getNthNode(index).getData();
   }
   
   public Integer set(int index, Integer value){
+    if(index < 0) throw new IndexOutOfBoundsException();
+    if(index > size-1) throw new IndexOutOfBoundsException();
     Integer a = getNthNode(index).getData();
     getNthNode(index).setData(value);
     return a;
@@ -96,6 +100,8 @@ class MyLinkedList{
   }
   
   public void add(int index,Integer value){
+    if(index < 0) throw new IndexOutOfBoundsException();
+    if(index > size) throw new IndexOutOfBoundsException();
     if (index == 0){
       addFirst(value);
     } 
@@ -129,6 +135,8 @@ class MyLinkedList{
   }
 
   public Integer remove(int index){
+    if(index < 0) throw new IndexOutOfBoundsException();
+    if(index > size-1) throw new IndexOutOfBoundsException();
     if(index == size-1){
         return removeLast();
      }
@@ -160,12 +168,12 @@ class MyLinkedList{
   
   public Integer removeLast(){
     Node current = getNthNode(size-1);
-    //Integer val = current.getData();
+    Integer val = current.getData();
     current = getNthNode(size-2);
     current.setNext(null);
     end = current;
     size--;
-    return 1;//val;
+    return val;
   }
   
   public Integer removeFirst(){

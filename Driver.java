@@ -1,4 +1,4 @@
-public class Driver2 {
+public class Driver {
     public static void main(String[] args) {
         //What's poppin' everybody, welcome to my driver, we chill here in the code house
         //Let's test this class and get this bread
@@ -42,7 +42,7 @@ public class Driver2 {
         System.out.println("#####################################");
         System.out.println("##Remove a Value by its Value Test:##");
         System.out.println("#####################################");
-        list.remove(new Integer(9));                                                       //CHANGED FROM A 9 =================== 
+        list.remove(new Integer(9));
         System.out.println(list);
         System.out.println("This should print: \"[0, 1, 2, 3, 4, 5, 6, 7, 8]\"");
         
@@ -79,7 +79,7 @@ public class Driver2 {
             System.out.println("Incorrect Exception Thrown:");
             e.printStackTrace();
         }
-      /*  try {
+        try {
             list.remove(9000);
         } catch(IndexOutOfBoundsException B) {
             System.out.println("Removing an oversized index throws the correct exception");
@@ -135,28 +135,24 @@ public class Driver2 {
             System.out.println("Incorrect Exception Thrown:");
             e.printStackTrace();
         }
-        */
+        
         //Step 10: Edge Case Testing
         System.out.println("######################");
         System.out.println("##Edge-Case Testing:##");
         System.out.println("######################\n");
         
         System.out.println("Removing Last Element:");
-              System.out.println(list);
-              System.out.println(list.size());
-
-        list.remove(8);             
+        list.remove(8);
         System.out.println(list);
         System.out.println("This should print: [0, 1, 2, 3, 4, 5, 6, 7]\n");
         
         System.out.println("Removing First Element:");
         list.remove(0);
         System.out.println(list);
-        System.out.println("This should print: [1, 2, 3, 4, 5, 6, 7]\n"); 
+        System.out.println("This should print: [1, 2, 3, 4, 5, 6, 7]\n");
         
         System.out.println("Adding to Last Element:");
-      System.out.println(list);
-        list.add(7, new Integer(8));                                          //from a 9
+        list.add(7, new Integer(8));
         System.out.println(list);
         System.out.println("This should print: [1, 2, 3, 4, 5, 6, 7, 8]\n");
         
