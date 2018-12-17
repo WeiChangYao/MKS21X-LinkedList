@@ -67,7 +67,7 @@ public class Driver2 {
         System.out.println(list.indexOf(0));
         System.out.println("This should print: 0");
         
-        //Step Nine: Exception Testing
+       /* //Step Nine: Exception Testing
         System.out.println("######################");
         System.out.println("##Exception Testing:##");
         System.out.println("######################");
@@ -135,7 +135,7 @@ public class Driver2 {
             System.out.println("Incorrect Exception Thrown:");
             e.printStackTrace();
         }
-        
+        */
         //Step 10: Edge Case Testing
         System.out.println("######################");
         System.out.println("##Edge-Case Testing:##");
@@ -143,8 +143,9 @@ public class Driver2 {
         
         System.out.println("Removing Last Element:");
               System.out.println(list);
+              System.out.println(list.size());
 
-        list.remove(8);
+        list.remove(8);             
         System.out.println(list);
         System.out.println("This should print: [0, 1, 2, 3, 4, 5, 6, 7]\n");
         
