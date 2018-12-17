@@ -105,7 +105,7 @@ class MyLinkedList{
     if(index > size) throw new IndexOutOfBoundsException();
     if (index == 0){
       addFirst(value);  //add to first if index is 0
-    } else{ 
+    } else{                     //I HAD TO ADD AN ELSE THERE OTHERWISE addFirst WOULDN'T WORK
     if (index == size-1){
       addLast(value);   //ADD TO FIRST IF ADDING TO LAST INDEX (CAPS SO I CAN REFER TO THIS)
     }
@@ -189,5 +189,21 @@ class MyLinkedList{
     size--;
     return val;
   }
+  
+  public String toBackString(){
+    String str = "";
+    Node current = end;         //start with first node
+    while (current != null){      //dont stop until you reach the end
+      if(current.getData() != null){  //as long as data is not nothing (because I made start null by default in the beginning)
+        str += current.getData();     //add to string
+      }
+      current = current.prev();    //move to next node
+    }
+    return str;                  //return the computer's hard work
+  }
+  
+  
+  
+  
     
 }
