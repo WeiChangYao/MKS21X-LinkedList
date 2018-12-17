@@ -96,10 +96,23 @@ class MyLinkedList{
   }
   
   public void add(int index,Integer value){
+    if (index == 0){
+      addFirst(value);
+    } else{
     size++;
     Node newNode = new Node(value, null, null);
     newNode.setNext(getNthNode(index));
 	  getNthNode(index-1).setNext(newNode); 
+    }
+  }
+  
+  public void addFirst(Integer value){
+    size++;
+    Node newNode = new Node(value, start, null);
+    if (start != null){
+      start.setPrev(newNode);
+    }
+    start = newNode;
   }
 
   public Integer remove(int index){
