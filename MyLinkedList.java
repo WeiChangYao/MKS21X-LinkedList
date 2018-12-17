@@ -105,7 +105,10 @@ class MyLinkedList{
     if(index > size) throw new IndexOutOfBoundsException();
     if (index == 0){
       addFirst(value);  //add to first if index is 0
-    } 
+    } else{ 
+    if (index == size-1){
+      addLast(value);   //ADD TO FIRST IF ADDING TO LAST INDEX (CAPS SO I CAN REFER TO THIS)
+    }
 
     else{
     size++;             //add to size
@@ -113,6 +116,7 @@ class MyLinkedList{
     newNode.setNext(getNthNode(index));         //set new node's next to node at index
 	  getNthNode(index-1).setNext(newNode);       //set the thing before index node to new node
     }                                           //FORGOT TO SET PREV
+  }
   }
   
 
@@ -123,6 +127,15 @@ class MyLinkedList{
       start.setPrev(newNode);             //make it point back
     }
     start = newNode;                      //new node is the new start
+  }
+  
+  public void addLast(Integer value){
+    size++;
+    Node newNode = new Node(value, null, end); //newNode points to end
+    if (end != null){
+      end.setNext(newNode);                    //end points back at newNode
+    }  
+    end = newNode;                             //newNode is new end
   }
 
   public Integer remove(int index){
