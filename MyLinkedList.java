@@ -148,6 +148,7 @@ class MyLinkedList{
       return removeFirst();
     }
     else{
+   // Node newNode = getNthNode
     Integer removeReturn = getNthNode(index).getData();//save data at index 
     getNthNode(index+1).setPrev(getNthNode(index-1));  //set node infront index point to node before index
     getNthNode(index-1).setNext(getNthNode(index+1));  //set node before index point to node infront index
@@ -173,7 +174,7 @@ class MyLinkedList{
   public Integer removeLast(){
     Node current = getNthNode(size-1); //current is last node
     Integer val = current.getData();   //save value
-    current = getNthNode(size-2);      //current is second to last node
+    current = current.prev();      //current is second to last node
     current.setNext(null);             //it doesn't point to anything
     end = current;                     //it's the new end node
     size--;                            //decrease size
