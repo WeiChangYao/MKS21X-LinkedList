@@ -147,9 +147,10 @@ class MyLinkedList{
     if(index == 0){
       return removeFirst();
     }
-    else{   //Literally replaced getNthNode with current (current = getNthNode(index)) didn't work >:[
-    Integer removeReturn = getNthNode(index).getData();//save data at index 
-    getNthNode(index+1).setPrev(getNthNode(index-1));  //set node infront index point to node before index
+    else{ 
+    Node newNode = getNthNode(index);//Literally replaced getNthNode with newNode (newNode = getNthNode(index)) didn't work >:[ [for the bottom half]
+    Integer removeReturn = newNode.getData();//save data at index 
+    newNode.next().setPrev(newNode.prev());  //set node infront index point to node before index
     getNthNode(index-1).setNext(getNthNode(index+1));  //set node before index point to node infront index
     size--;                                            //minus size
     return removeReturn;
@@ -204,7 +205,18 @@ class MyLinkedList{
     return str;                  //return the computer's hard work
   }
   
+  public void extend(MyLinkedList other){
+    this.size += other.size + this.size;  //adds the sizes in this list
+    other.size = 0;                       //other list is size 0
+    this.end.setNext(other.start);        //points this end to the start of other
+    other.start.setPrev(this.end);        //start of other points back
+    this.end = other.end;                 //the other end becomes the new end node
+    other.start = new Node(null,other.end,null);
+    other.end = new Node(null,null,other.start); //erasing other list
+
+  }
   
+
   
   
     
