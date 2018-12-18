@@ -6,6 +6,7 @@ class MyLinkedList{
   MyLinkedList(){
     size = 0;                       //makes list with size 0        
     start = new Node(null,null,null);//starting node with nothing
+    end = new Node(null,null,null);
   }
   
   public int size(){          
@@ -206,13 +207,13 @@ class MyLinkedList{
   }
   
   public void extend(MyLinkedList other){
-    this.size += other.size + this.size;  //adds the sizes in this list
+    this.size = other.size + this.size;  //adds the sizes in this list
     other.size = 0;                       //other list is size 0
     this.end.setNext(other.start);        //points this end to the start of other
     other.start.setPrev(this.end);        //start of other points back
     this.end = other.end;                 //the other end becomes the new end node
-    other.start = new Node(null,other.end,null);
-    other.end = new Node(null,null,other.start); //erasing other list
+    other.start = new Node(null,null,null);
+    other.end = new Node(null,null,null); //erasing other list
 
   }
   
