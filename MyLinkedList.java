@@ -147,8 +147,7 @@ class MyLinkedList{
     if(index == 0){
       return removeFirst();
     }
-    else{
-   // Node newNode = getNthNode
+    else{   //Literally replaced getNthNode with current (current = getNthNode(index)) didn't work >:[
     Integer removeReturn = getNthNode(index).getData();//save data at index 
     getNthNode(index+1).setPrev(getNthNode(index-1));  //set node infront index point to node before index
     getNthNode(index-1).setNext(getNthNode(index+1));  //set node before index point to node infront index
@@ -156,6 +155,8 @@ class MyLinkedList{
     return removeReturn;
     }
   }
+
+
   
   public boolean remove(Integer value){
    if (contains(value) == true){        //sees if the value's there
